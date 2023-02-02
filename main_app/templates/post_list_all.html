@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+- Home
+{% endblock title %}
+
+{% block content %}
+
+<div class="home-body">
+    <div class="posts-container">
+<h1 class="title">{{header}}</h1>
+
+{% if user.is_authenticated %}
+<div class="loggedin-row">
+    <div class="welcome-container">
+        <a 
+            class="navbar-item" 
+            href="{% url 'post_create' %}" 
+            id="nav-link">
+                <p class="welcome-user post">post a mom n spot</p>
+        </a>
+    </div>
+    <div class="browse-container">
+        <a class="button" id="browse-button" href="{% url 'post_list' %}">
+            <p class="return-text">browse your mom n spots</p>
+        </a>
+    </div>
+</div>
+    <div class="gallery">
+        {% for post in posts %}
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-square">
+                        <img src="{{post.img.url}}" alt="{{post.shop_name}}" />
+                    </figure>
+                </div>
+                <div class="card-header sub-header">
+                    <p class="card-header-title">{{post.shop_name}} ({{post.neighborhood}})</p>
+                </div>
+                <div class="card-body text">
+                    <p>{{post.story}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <div class="gallery">
+            {% for post in posts %}
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-square">
+                            <img src="{{post.img.url}}" alt="{{post.shop_name}}" />
+                        </figure>
+                    </div>
+                    <div class="card-header sub-header">
+                        <p class="card-header-title">{{post.shop_name}} ({{post.neighborhood}})</p>
+                    </div>
+                    <div class="card-body text">
+                        <p>{{post.story}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+{% endif %}
+</div>
+</div>
+{% endblock %}

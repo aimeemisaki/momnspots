@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+- Details
+{% endblock title %}
+
+{% block content %}
+    <div>
+            {% for post in posts %}
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-square">
+                        <img src="{{post.img.url}}" alt="{{post.shop_name}}" />
+                    </figure>
+                </div>
+                <div class="card-header sub-header">
+                    <p class="card-header-title">{{post.shop_name}} ({{post.neighborhood}})</p>
+                </div>
+                <div class="card-body text">
+                    <p>{{post.story}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'post_delete' post.pk %}" class="button is-danger">
+            <span class="icon">
+                <i class="fas fa-trash-alt"></i>
+            </span>
+        </a>
+{%endblock%}
+        

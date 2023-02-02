@@ -1,0 +1,36 @@
+{% extends 'post_list.html' %}
+
+
+{% block title %}
+- Create
+{% endblock title %}
+
+{% block content %}
+<div class="home-body">
+<h1 class="title post-title">Post a Mom N Spot !</h1>
+
+<div class="create-page">
+        <div class="create-space">
+            <div class="return">
+            <a class="button" href="{% url 'post_list_all' %}" id="my-button">
+                <p class="return-text">return to all mom n spots</p>
+            </a>
+        </div>
+    <div class="create-container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %} 
+            {{ form.as_p }} 
+            <div class="">
+                <button 
+                type="submit"
+                class="submit-button"
+                id="submit-button">
+                    <p class="text">submit</p>
+                </button>
+        </form>
+        </div>
+    </div>
+</div>
+</div>
+{%endblock%}
+

@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+- Delete
+{% endblock title %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="card">
+        <h1 class="title pt-5">Are you sure you want to delete {{post.shop_name}}?</h1>
+    {{form }}
+    <div class="buttons">
+        <input class="button" type="submit" value="Delete"/>
+        ></a>
+    </div>
+</form>
+
+{% endblock content %}

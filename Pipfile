@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+psycopg2-binary = "*"
+django-on-heroku = "*"
+gunicorn = "*"
+python-dotenv = "*"
+pillow = "*"
+boto3 = "*"
+django-storages = "*"
+awscli = "*"
+awsebcli = "*"
+
+[dev-packages]
+awsebcli = "*"
+
+[requires]
+python_version = "3.9"

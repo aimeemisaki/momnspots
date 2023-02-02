@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+- My List
+{% endblock title %}
+
+{% block content %}
+<div class="home-body">
+<h1 class="title post-title">{{header}}</h1>
+
+<div>
+    <a class="button" href="{% url 'post_list_all' %}" id="my-button">
+        <p class="return-text">return to all mom n spots</p>
+    </a>
+</div>
+<div class="gallery">
+    {% for post in posts %}
+        <div class="card">
+            <div class="edit-delete">
+                <a class="edit" href="{% url 'post_update' post.pk %}">
+                    <p class="edit-text">edit</p>
+                </a>
+            </div>
+            <div class="card-image">
+                <figure class="image is-square">
+                    <img src="{{post.img.url}}" alt="{{post.shop_name}}" />
+                </figure>
+            </div>
+            <div class="sub-header">
+                <p class="card-header-title">{{post.shop_name}} ({{post.neighborhood}})</p>
+            </div>
+            <div class="text">
+                <p>{{post.story}}</p>
+            </div>
+        </div>
+        {% empty %}
+        <div class="card">
+            <p class="sub-header">You haven't posted a Mom N Spot yet!</p>
+        </div>
+    {% endfor %}
+</div>
+/div>
+{% endblock %}
+
+

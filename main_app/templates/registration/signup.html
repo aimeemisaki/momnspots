@@ -1,0 +1,30 @@
+{% extends 'index.html' %} 
+
+{% block title %}
+
+Sign Up
+
+{% endblock title %}
+
+{% block content %}
+
+<h1 class="title">Sign Up</h1>
+
+<div class="auth-container">
+    <div class="card" id="signup-form-card">
+        <form method="post" action="{% url 'signup' %}">
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <div class="columns is-mobile is-centered is-vcentered">
+                <button 
+                type="submit"
+                class="auth-button"
+                >
+                    <p class="text">sign up</p>
+                </button>
+            </div>
+            <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+    </div>
+</div>
+{% endblock %}

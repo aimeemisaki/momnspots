@@ -1,0 +1,29 @@
+{% extends 'index.html' %} 
+
+{% block title %}
+ Log In
+{% endblock title %}
+
+{% block content %}
+
+<h1 class="title">Log In</h1>
+
+<div class="auth-container">
+    <div class="card" id="login-form-card">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <div class="columns is-mobile is-centered is-vcentered">
+                <button 
+                type="submit"
+                class="auth-button"
+                >
+                    <p class="text">log in</p>
+                </button>
+            </div>
+            <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+    </div>
+</div>
+
+{% endblock %}

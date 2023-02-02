@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+- Edit
+{% endblock title %}
+
+{% block content %}
+<div class="home-page">
+    <div class="update-page">
+        <div class="create-container"> 
+            <form method="post">
+                {% csrf_token %} 
+                {{ form.as_p }}
+                <input type="submit" value="Submit changes"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
