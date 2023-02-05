@@ -1,13 +1,10 @@
 arrow==1.2.2
 asgiref==3.6.0
 attrs==22.2.0
-awscli==1.27.51
-awsebcli==3.20.3
 bcrypt==4.0.1
 binaryornot==0.4.4
 blessed==1.19.1
 boto3==1.26.54
-botocore==1.23.54
 cached-property==1.5.2
 cement==2.8.2
 certifi==2022.12.7
@@ -51,7 +48,6 @@ python-dateutil==2.8.2
 python-dotenv==0.21.0
 python-slugify==6.1.2
 pytz==2022.7.1
-PyYAML==5.4.1
 requests==2.26.0
 rsa==4.7.2
 s3transfer==0.6.0
