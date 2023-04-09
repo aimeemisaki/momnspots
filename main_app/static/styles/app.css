@@ -393,12 +393,14 @@ select {
 
     .posts-container {
         padding-top: 50px;
-        overflow-y: auto;
+        max-height: 450px;
+        max-width: 800px;
+        overflow-y: scroll;
     }
     .gallery {
         display: flex;
         flex-direction: column;
-        overflow-y: auto;
+        overflow-y: scroll;
     }
 
     .loggedin-row {
@@ -446,6 +448,7 @@ select {
 
     button {
         width: 50px;
+        
     }
 
 
